@@ -30,9 +30,12 @@ export async function callAPI(textInput: string): Promise<string> {
       }
     }
 
+    console.log('API 응답:', fullResponse);
+
     // JSON 파싱 및 예쁘게 포맷팅
     try {
       const jsonResult = JSON.parse(fullResponse);
+      console.log('파싱된 JSON 결과:', jsonResult);
       return JSON.stringify(jsonResult, null, 2);
     } catch (error) {
       console.error('JSON 파싱 오류:', error);
